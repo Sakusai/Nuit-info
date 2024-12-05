@@ -1,29 +1,34 @@
-"use client"
-import React, { useState, useRef, useEffect } from "react";
+"use client";
+import React, { useState, useRef } from "react";
 import ReactDOM from "react-dom";
 
 interface PointRadarProps {
   posX: number;
   posY: number;
+  children: any;
 }
 
-const PointRadar: React.FC<PointRadarProps> = ({ posX, posY }) => {
+const PointRadar: React.FC<PointRadarProps> = ({ posX, posY, children }) => {
   const [showModal, setShowModal] = useState(false);
-  const [modalStyle, setModalStyle] = useState<{ left: number; top: number }>({
-    left: 0,
-    top: 0,
-  });
-
+  const [modalStyle, setModalStyle] = useState<{ left: number; top: number }>({ left: 0, top: 0 });
+  const [barLeft, setBarLeft] = useState<number>(0);
   const pointRef = useRef<HTMLDivElement | null>(null);
 
   const toggleModal = () => {
     if (!showModal) {
       const point = pointRef.current?.getBoundingClientRect();
       if (point) {
-        setModalStyle({
-          left: point.right + 30,
-          top: point.top + point.height / 2,
-        });
+        const windowWidth = window.innerWidth;
+        let newModalLeft = point.right + 30;
+        let newBarLeft = point.right;
+
+        if (newModalLeft + 300 > windowWidth) {
+          newModalLeft = point.left - 300 - 30;
+          newBarLeft = point.left - 35;
+        }
+
+        setModalStyle({ left: newModalLeft, top: point.top + point.height / 2 });
+        setBarLeft(newBarLeft);
       }
     }
     setShowModal(!showModal);
@@ -32,20 +37,9 @@ const PointRadar: React.FC<PointRadarProps> = ({ posX, posY }) => {
   const Modal = () => (
     <div
       className="modal"
-      style={{
-        left: `${modalStyle.left}px`,
-        top: `${modalStyle.top}px`,
-        transform: "translateY(-50%)",
-      }}
+      style={{ left: `${modalStyle.left}px`, top: `${modalStyle.top}px`, transform: "translateY(-50%)" }}
     >
-      <h2 className="text-lg font-bold">Modale</h2>
-      <p className="mt-2">Je suis à ({posX}%, {posY}%).</p>
-      <button
-        className="modal-button mt-2"
-        onClick={toggleModal}
-      >
-        Fermer
-      </button>
+      {children}
     </div>
   );
 
@@ -54,30 +48,14 @@ const PointRadar: React.FC<PointRadarProps> = ({ posX, posY }) => {
       <div
         ref={pointRef}
         className="point"
-        style={{
-          left: `${posX}%`,
-          top: `${posY}%`,
-        }}
+        style={{ left: `${posX}%`, top: `${posY}%` }}
         onClick={toggleModal}
       ></div>
-
       <div className="radar-effect" style={{ left: `${posX}%`, top: `${posY}%` }}></div>
-
       {showModal && (
-        <div
-          className="bar"
-          style={{
-            left: `calc(${posX}% + 8px)`,
-            top: `${posY}%`,
-          }}
-        ></div>
+        <div className="bar" style={{ left: `${barLeft}px`, top: `${posY}%`, width: `35px` }}></div>
       )}
-
-      {showModal &&
-        ReactDOM.createPortal(
-          <Modal />,
-          document.body
-        )}
+      {showModal && ReactDOM.createPortal(<Modal />, document.body)}
     </div>
   );
 };
