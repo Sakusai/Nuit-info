@@ -65,7 +65,7 @@ const Clicker: React.FC = () => {
         setRandomPosition()
     }
     return (
-        <div className="relative h-screen w-screen overflow-hidden bg-blue-500 clicker-page">
+        <div className="relative w-screen overflow-hidden bg-blue-500 clicker-page ">
             <img
                 src="/clicker/img/bateau1-1.png"
                 alt="Cursor Follower"
