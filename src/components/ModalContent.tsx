@@ -2,7 +2,7 @@
 
 interface ModalContentProps {
   title: string;
-  content: string;
+  content: any;
 }
 
 const ModalContent: React.FC<ModalContentProps> = ({ title, content }) => {
