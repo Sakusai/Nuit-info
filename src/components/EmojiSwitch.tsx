@@ -4,7 +4,6 @@ import React, { useState } from "react";
 function EmojiSwitch() {
   const [isEmojiFont, setIsEmojiFont] = useState(false);
 
-  // Fonction pour transformer chaque caractère en emoji
   const charToEmoji = (char: string) => {
     const emojis = [
       '😀', '😃', '😄', '😁', '😆', '😅', '😂', '🤣', '😊', '😇',
@@ -15,28 +14,20 @@ function EmojiSwitch() {
   };
 
   const toggleFont = () => {
-    // Sélectionner tous les éléments de texte dans l'application
     const allTextElements = document.querySelectorAll('*');
     
     allTextElements.forEach((element: any) => {
       if (element.children.length === 0 && element.innerText.trim() !== "") {
-        // Si l'élément contient du texte et pas d'enfants
-
-        // Vérifier si l'élément a déjà un texte sauvegardé
         if (!element.hasAttribute('data-original-text')) {
-          // Sauvegarder le texte original dans un attribut data
           element.setAttribute('data-original-text', element.innerText);
         }
 
         if (isEmojiFont) {
-          // Revenir au texte original
           element.innerText = element.getAttribute('data-original-text');
         } else {
-          // Transformer le texte en emojis
           let originalText = element.getAttribute('data-original-text');
           let newText = '';
 
-          // Appliquer les emojis
           for (let i = 0; i < originalText.length; i++) {
             newText += charToEmoji(originalText[i]);
           }
@@ -45,7 +36,6 @@ function EmojiSwitch() {
       }
     });
 
-    // Alterner l'état
     setIsEmojiFont(!isEmojiFont);
   };
 
