@@ -84,15 +84,21 @@
 }
 
 .modal {
-  position: absolute;
-  background-color: #1f2937;
-  color: white;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  z-index: 9999;
-  pointer-events: all;
-}
+    position: absolute;
+    background-color: #1f2937;
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999; 
+    pointer-events: all; 
+    opacity: 1; 
+    visibility: visible; 
+    max-width: 300px; 
+    width: auto; 
+    height: auto; 
+    overflow: auto; 
+  }
 
 .modal-button {
   background-color: #ef4444;
