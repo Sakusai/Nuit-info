@@ -37,16 +37,13 @@
     z-index: 1;
     }
 
-  .bar {
-    position: absolute;
-    height: 2px;
-    background-color: #10b981;
-    width: 35px;
-    transform: translateY(-50%);
-    opacity: 0;
-    animation: fadeIn 0.5s forwards;
-    z-index: 1;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
   }
+
+  
 
   .modal {
     position: absolute;
