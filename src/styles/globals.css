@@ -8,12 +8,12 @@
     opacity: 1;
   }
   50% {
-    transform: translate(-50%, -50%) scale(3); 
-    opacity: 0.5; 
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0.5;
   }
   100% {
-    transform: translate(-50%, -50%) scale(1); 
-    opacity: 0; 
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
   }
 }
 
@@ -25,17 +25,17 @@
       opacity: 1;
     }
   }
-  
+
   .bar {
     position: absolute;
     height: 2px;
     background-color: #10b981;
     width: 35px;
     transform: translateY(-50%);
-    opacity: 0; 
-    animation: fadeIn 0.5s forwards; 
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
     z-index: 1;
-    }  
+    }
 
   .bar {
     position: absolute;
@@ -47,7 +47,7 @@
     animation: fadeIn 0.5s forwards;
     z-index: 1;
   }
-  
+
   .modal {
     position: absolute;
     background-color: #1f2937;
@@ -56,27 +56,27 @@
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     z-index: 9999;
-    pointer-events: all; 
-    opacity: 0; 
+    pointer-events: all;
+    opacity: 0;
     animation: fadeIn 0.5s forwards;
   }
 
 .radar-effect {
   position: absolute;
-  border: 2px solid #10b981; 
+  border: 2px solid #10b981;
   border-radius: 50%;
   width: 20px;
   height: 20px;
-  animation: radarEffect 2s infinite; 
+  animation: radarEffect 2s infinite;
   transform: translate(-50%, -50%);
-  z-index: 1; 
-} 
+  z-index: 1;
+}
 
 .point {
   position: absolute;
   width: 20px;
   height: 20px;
-  background-color: #10b981; 
+  background-color: #10b981;
   border-radius: 50%;
   cursor: pointer;
   transform: translate(-50%, -50%);
@@ -90,8 +90,8 @@
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  z-index: 9999; 
-  pointer-events: all; 
+  z-index: 9999;
+  pointer-events: all;
 }
 
 .modal-button {
@@ -110,8 +110,34 @@
 :root {
     --font-family: 'Arial', sans-serif;
   }
-  
+
   body {
     font-family: var(--font-family);
   }
-  
+
+
+.clicker-page {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+.clicker-div{
+    background-image: url("/clicker/img/ocean.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 100%;
+    padding-right: 60px;
+}
+
+.clicker-button {
+    border-radius: 100%;
+}
+
+.clicker-point {
+    display: flex;
+    background-color: blueviolet;
+    justify-content: center;
+    z-index: 2;
+}
