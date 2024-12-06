@@ -3,6 +3,7 @@ import "~/styles/globals.css";
 import { Inter } from "next/font/google";
 import LyrecoChecker from "./components/easter/LyrecoChecker";
 import KonamiEmojiChanger from "~/components/KonamiEmojiChanger";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +19,9 @@ export default function RootLayout({
 }) {
     return (
         <html lang="fr" className="flex flex-col min-h-screen">
+            <head>
+                <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+            </head>
             <body className={`flex flex-col flex-1 ${inter.className}`}>
                 <Header />
                 <main className="flex flex-col flex-1">
