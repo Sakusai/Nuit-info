@@ -17,6 +17,11 @@ interface QuizState {
      */
     setCorrectAnswer: (questionId: number, isCorrect: boolean) => void;
     /**
+     *
+     * @param id
+     */
+    getQuestionById: (id: number) => Question;
+    /**
      * La fonction pour obtenir les questions par type de sujet
      * @param subjectType Le type de sujet des questions
      * @returns La liste des questions par type de sujet
@@ -44,6 +49,10 @@ const useQuizStore = create<QuizState>((set, get) => ({
                 questions: state.questions,
             };
         });
+    },
+    getQuestionById: (idQuestion: number) => {
+        console.log(idQuestion);
+        return get().questions.find((q) => q.id === idQuestion)
     },
     getQuestionsBySubjectType: (subjectType: SubjectType) => {
         return get().questions.filter((q) => q.subjectType === subjectType);

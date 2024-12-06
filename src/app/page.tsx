@@ -1,5 +1,8 @@
 "use client"
 import Link from "next/link";
+import ModalContent from "~/components/ModalContent";
+import Radar from "~/components/Radar";
+import TrueOfFalse from "~/components/TrueOrFalse";
 import useQuizStore from "./state/useQuizStore";
 import { SubjectType } from "./enum/SubjectType";
 import TextHoleQuestion from "~/components/HoleQuestions";

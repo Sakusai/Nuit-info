@@ -41,4 +41,8 @@ export interface Question {
      * L'utilisateur a-t-il répondu correctement à la question ?
      */
     isCorrect?: boolean;
+    /**
+     * La réponse à la question
+     */
+    answer?: string;
 }
