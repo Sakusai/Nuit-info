@@ -28,20 +28,17 @@ export default function Ocean() {
                     }}
                 >
                     {/* Points Radar */}
-                    <PointRadar posX={202} posY={13}>
-                        <QCMModal questionId={4}  />
-                    </PointRadar>
+                    <QCMModal questionId={3} posX={202} posY={13}/>
                     <PointRadar posX={110} posY={32}>
                         <HoleQuestions questionId={"id" in question2 ? question2.id : 0} questionText={question2.questionType} blanks={question2.blanks ?? []} />
                     </PointRadar>
                     <PointRadar posX={-9} posY={32}>
                         <TrueOfFalse idQuestion={1} />
                     </PointRadar>
-                    <PointRadar posX={-90} posY={40}>
-                        <ModalContent title="jambe" content="Mountains rise high into the atmosphere.">
-                            <p>They are natural wonders on Earth.</p>
-                        </ModalContent>
-                    </PointRadar>
+                    <QCMModal questionId={5} posX={-90} posY={40}/>
+                </div>
+                <div className="fixed bottom-0 right-0 p-2 m-1 bg-black bg-opacity-50 rounded-lg">
+                    <a href="https://www.pexels.com/video/bird-s-eye-view-of-ocean-waves-1918465/" className="link font-thin">© Bird's Eye View of Ocean Waves</a>
                 </div>
             </>
         );

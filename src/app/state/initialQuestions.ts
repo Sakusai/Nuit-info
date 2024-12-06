@@ -67,11 +67,13 @@ const initialQuestions: Question[] = [
     subjectType: SubjectType.Human,
     questionType: QuestionType.Reply,
     question:
-      "Les océans sont les poumons de la Terre mais quelle proportion de O₂ produite ?\n" +
-      "A) 10%.\n" +
-      "B) 15%.\n" +
-      "C) 50%.\n" +
-      "D) 86%.\n",
+      "Les océans sont les poumons de la Terre mais quelle proportion de O₂ produite ?",
+    multipleAnswers: [
+      {letter: "A", entire:"A) 10%"},
+      {letter: "B", entire:"B) 15%"},
+      {letter: "C", entire:"C) 50%"},
+      {letter: "D", entire:"D) 86%"},
+    ],
     answer: "C",
   },
   {
