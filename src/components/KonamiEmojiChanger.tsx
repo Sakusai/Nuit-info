@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import MovaiButton from "./MovaiButton"; // Adjust the path as necessary
+
 
 const KonamiEmojiChanger: React.FC = () => {
   const [isEmojiFont, setIsEmojiFont] = useState(false);
@@ -101,6 +103,7 @@ const KonamiEmojiChanger: React.FC = () => {
           <h3 className="text-lg font-bold">Konami Code Détecté 🎉</h3>
           <p className="py-4">
             Maintenant, appelez Hugo pour décrypter cette page !
+            <MovaiButton />
           </p>
           <form method="dialog" className="modal-backdrop">
             <button>Fermer</button>
