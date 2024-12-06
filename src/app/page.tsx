@@ -1,6 +1,13 @@
+"use client"
 import Link from "next/link";
+import useQuizStore from "./state/useQuizStore";
+import { SubjectType } from "./enum/SubjectType";
+import TextHoleQuestion from "~/components/HoleQuestions";
 
 export default function HomePage() {
+  const { getQuestionsBySubjectType } = useQuizStore();
+  const questions = getQuestionsBySubjectType(SubjectType.Human); // Exemple de type de sujet
+
   return (
     <div className="flex flex-1 flex-col items-center justify-center bg-[url('/img/background.svg')] bg-cover bg-center text-white">
       <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 backdrop-blur-md">

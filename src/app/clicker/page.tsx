@@ -67,6 +67,8 @@ const Clicker: React.FC = () => {
     return (
         <div className="relative w-screen overflow-hidden bg-blue-500 clicker-page clicker-div">
             <Image
+                width={80}
+                height={80}
                 src="/clicker/img/bateau1-1.png"
                 alt="Cursor Follower"
                 className="fixed pointer-events-none transition-transform duration-75"
@@ -74,8 +76,6 @@ const Clicker: React.FC = () => {
                     top: position.y,
                     left: position.x,
                     transform: "translate(-50%, -50%)",
-                    width: "80px",
-                    height: "80px",
                     zIndex: 100,
                 }}
             />
