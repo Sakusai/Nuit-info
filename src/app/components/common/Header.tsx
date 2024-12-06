@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export default function Header() {
     const links = [
-        <Link href="/ocean">L'Océan</Link>,
-        <Link href="/human">L'Humain</Link>,
-        <Link href="/about">À propos</Link>,
+        <Link key="ocean" href="/ocean">L&apos;Océan</Link>,
+        <Link key="human" href="/human">L&apos;Humain</Link>,
+        <Link key="about" href="/about">À propos</Link>,
     ];
 
     return (

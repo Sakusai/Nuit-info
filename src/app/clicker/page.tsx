@@ -66,7 +66,7 @@ const Clicker: React.FC = () => {
     }
     return (
         <div className="relative w-screen overflow-hidden bg-blue-500 clicker-page clicker-div">
-            <img
+            <Image
                 src="/clicker/img/bateau1-1.png"
                 alt="Cursor Follower"
                 className="fixed pointer-events-none transition-transform duration-75"
