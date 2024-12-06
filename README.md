@@ -33,3 +33,15 @@ Pour démarrer le projet en local, exécutez la commande suivante :
 ```sh
 $ npm run dev
 ```
+
+### 🥊 Défis
+
+#### Cookie cauchemar
+Le clicker est accessible depuis la nav bar du site !
+
+#### Ymoji
+Il faut faire le konami code pour l'activer 😁
+
+#### A la chasse au logo!
+- En écrivant Lyreco sur votre clavier n'impote où sur le site
+- Dans la page "A propos"
