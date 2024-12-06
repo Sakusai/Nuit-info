@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from "react";
 import useQuizStore from "~/app/state/useQuizStore";
 
@@ -18,7 +19,7 @@ const TextHoleQuestion: React.FC<TextHoleQuestionProps> = ({
   questionText,
   blanks,
 }) => {
-  const [userAnswers, setUserAnswers] = useState<{ [key: string]: string }>({});
+  const [userAnswers, setUserAnswers] = useState<Record<string, string>>({});
   const [feedback, setFeedback] = useState<string | null>(null);
 
   const { setCorrectAnswer } = useQuizStore();
@@ -51,7 +52,7 @@ const TextHoleQuestion: React.FC<TextHoleQuestionProps> = ({
     const textWithBlanks = [];
     let lastIndex = 0;
 
-    blanks.forEach((blank, index) => {
+    blanks.forEach((blank) => {
       const startIdx = questionText.indexOf(`{${blank.id}}`, lastIndex);
       const beforeBlank = questionText.slice(lastIndex, startIdx);
 
