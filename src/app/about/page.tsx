@@ -67,7 +67,7 @@ export default function About() {
                                 controls
                             />
                             <video
-                                src="\videos\Plancton.mp4"
+                                src="\video\Plancton.mp4"
                                 width={400}
                                 height={300}
                                 className="rounded-xl shadow-lg"
@@ -82,7 +82,7 @@ export default function About() {
                             Notre jingle a été créé par <strong>Udycz Alexis</strong>, membre de l'équipe EKIP. Il a été réalisé à l'aide du logiciel <strong>GarageBand</strong> d'Apple.
                         </p>
                         <audio
-                            src="\video\jingle.mp3"
+                            src="\audio\jingle.mp3"
                             className="rounded-xl shadow-lg"
                             controls
                         />
