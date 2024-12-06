@@ -7,6 +7,8 @@ import Radar from "~/components/Radar";
 
 interface Props {
   questionId: number;
+  posX: number;
+  posY: number;
 }
 
 const QCMModal = (props: Props) => {
@@ -69,7 +71,7 @@ const QCMModal = (props: Props) => {
       </>
     );
     return (
-      <Radar posX={50} posY={50}>
+      <Radar posX={props.posX} posY={props.posY}>
         <ModalContent title="QCM" content={content} />
       </Radar>
     );
