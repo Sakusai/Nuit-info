@@ -7,10 +7,9 @@ import { ReactElement } from "react";
 interface ModalContentProps {
   title: string;
   content: any;
-  children: ReactElement;
 }
 
-const ModalContent: React.FC<ModalContentProps> = ({ title, content, children }) => {
+const ModalContent: React.FC<ModalContentProps> = ({ title, content }) => {
   return (
     <div>
       <h2 className="mb-2 text-xl font-semibold text-blue-300">{title}</h2>

@@ -47,16 +47,18 @@ const QCMModal = (props: Props) => {
                 type="radio"
                 name="qcm"
                 value={reponse.letter}
-                onClick={() => setSelected(reponse.letter)}
+                onChange={() => setSelected(reponse.letter)}
                 checked={reponse.letter === selectedAnswer}
               />
               <label className="p-1">{reponse.entire}</label>
             </li>
           ))}
         </ul>
-        <button className="rounded-sm bg-blue-300 p-1" onClick={validResponse}>
-          Valider
-        </button>
+        <div className="pt-5">
+          <button className="btn btn-primary w-full" onClick={validResponse}>
+            Valider
+          </button>
+        </div>
         {isCorrect ? (
           <p>
             La réponse est en effet : {question.answer}

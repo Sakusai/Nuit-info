@@ -78,7 +78,7 @@ const TextHoleQuestion: React.FC<TextHoleQuestionProps> = ({
   };
 
   return (
-    <div className="mx-auto max-w-lg p-4">
+    <div className="mx-auto max-w-lg gap-4 p-4">
       <p className="mb-4 text-lg">Complétez les trous suivants :</p>
       <div className="question-text mb-4">{getFormattedQuestionText()}</div>
       <div className="mt-4">

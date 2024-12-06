@@ -15,16 +15,17 @@ export default function Ocean() {
             <>
                 <video
                     autoPlay loop muted
-                    className="object-cover top-0 left-0 fixed z-[-1] w-full h-full opacity-50"
+                    className="object-cover top-0 left-0 fixed z-[-1] w-full h-full opacity-50 blur-sm"
                     src="video/ocean.mp4"
                 />
                 <div
-                    className="flex items-center justify-center w-full h-screen"
+                    className="flex items-center justify-center w-full"
                     style={{
                         backgroundImage: "url('/img/human.png')",
                         backgroundSize: "contain",
                         backgroundPosition: "center center",
                         backgroundRepeat: "no-repeat",
+                        height: "90vh",
                     }}
                 >
                     {/* Points Radar */}

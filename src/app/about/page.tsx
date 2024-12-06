@@ -49,7 +49,7 @@ export default function About() {
                         </p>
                     </div>
                 </Section>
-                <Section title="Le projet « Avenir Ocean »">
+                <Section title="Le projet « Avenir Océan »">
                     <div className="flex flex-col gap-5 items-center">
                         <Image
                             src="https://placehold.co/600x400"
@@ -88,20 +88,20 @@ export default function About() {
                 <Section title="Le podcast">
                     <div className="flex flex-col items-center gap-5">
                         <p className="text-justify">
-                            Notre podcast <strong>Avenir Ocean</strong> est un projet de sensibilisation à la pollution plastique des océans. Nous avons pour objectif de
+                            Notre podcast <strong>Avenir Océan</strong> est un projet de sensibilisation à la pollution plastique des océans. Nous avons pour objectif de
                             sensibiliser le grand public à la pollution plastique des océans, à ses conséquences et à ses solutions. Pour cela, nous
                             avons réalisé une série de podcasts qui abordent différents aspects de la pollution plastique des océans.
                         </p>
                         <div className="flex flex-wrap gap-5 justify-center">
                             <video
-                                src="\videos\CaChauffe.mp4"
+                                src="\video\CaChauffe.mp4"
                                 width={400} 
                                 height={300}
                                 className="rounded-xl shadow-lg"
                                 controls
                             />
                             <video
-                                src="\videos\Plancton.mp4"
+                                src="\video\Plancton.mp4"
                                 width={400} 
                                 height={300}
                                 className="rounded-xl shadow-lg"
@@ -116,7 +116,7 @@ export default function About() {
                             Notre jingle a été créé par <strong>Udycz Alexis</strong>, membre de l'équipe EKIP. Il a été réalisé à l'aide du logiciel <strong>GarageBand</strong> d'Apple.
                         </p>
                         <audio
-                            src="\videos\jingle.mp3"
+                            src="\video\jingle.mp3"
                             className="rounded-xl shadow-lg"
                             controls
                         />

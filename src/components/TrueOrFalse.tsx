@@ -19,14 +19,16 @@ const TrueOfFalse = ({ idQuestion }: TrueOrFalseProps) => {
   };
 
   return (
-    <div className="mx-auto max-w-lg p-4">
+    <div className="flex flex-col items-center">
       <p className="mb-4 text-lg">{question?.question}</p>
-      <button className="btn btn-success" onClick={() => answered("true")}>
-        Vrai
-      </button>
-      <button className="btn btn-error" onClick={() => answered("false")}>
-        Faux
-      </button>
+      <div className="flex gap-2">
+        <button className="btn btn-success" onClick={() => answered("true")}>
+          Vrai
+        </button>
+        <button className="btn btn-error" onClick={() => answered("false")}>
+          Faux
+        </button>
+      </div>
       {feedback && (
         <p
           className={`mt-4 text-xl ${feedback.includes("bonne") ? "text-green-500" : "text-red-500"}`}
