@@ -38,7 +38,7 @@ const PointRadar: React.FC<PointRadarProps> = ({ posX, posY, children }) => {
 
   const Modal = () => (
     <div
-      className="modal"
+      className="radar-modal"
       style={{ left: `${modalStyle.left}px`, top: `${modalStyle.top}px`, transform: "translateY(-50%)" }}
     >
       {children}
@@ -53,7 +53,7 @@ const PointRadar: React.FC<PointRadarProps> = ({ posX, posY, children }) => {
         style={{ left: `${posX}%`, top: `${posY}%` }}
         onClick={toggleModal}
       ></div>
-      <div className="radar-effect" style={{ left: `${posX}%`, top: `${posY}%` }}></div>
+      <div className="radar-modal-effect" style={{ left: `${posX}%`, top: `${posY}%` }}></div>
       {showModal && (
         <div className="bar" style={{ left: `${barLeft}px`, top: `${posY}%`, width: `35px` }}></div>
       )}

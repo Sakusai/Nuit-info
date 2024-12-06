@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from 'react';
+import useQuizStore from '~/app/state/useQuizStore';
 
 interface Blank {
   id: string;
@@ -7,13 +8,16 @@ interface Blank {
 }
 
 interface TextHoleQuestionProps {
-  questionText: string;
+  questionId: number; // Identifiant unique de la question
+  questionText: string | string[];
   blanks: Blank[];
 }
 
-const TextHoleQuestion: React.FC<TextHoleQuestionProps> = ({ questionText, blanks }) => {
+const TextHoleQuestion: React.FC<TextHoleQuestionProps> = ({ questionId, questionText, blanks }) => {
   const [userAnswers, setUserAnswers] = useState<{ [key: string]: string }>({});
   const [feedback, setFeedback] = useState<string | null>(null);
+
+  const { setCorrectAnswer } = useQuizStore();
 
   const handleInputChange = (id: string, value: string) => {
     setUserAnswers((prev) => ({
@@ -32,6 +36,7 @@ const TextHoleQuestion: React.FC<TextHoleQuestionProps> = ({ questionText, blank
     });
 
     setFeedback(correct ? "Bien joué ! C'est une bonne réponse !" : "Les réponses ne sont pas toutes correctes.");
+    setCorrectAnswer(questionId, correct);
   };
 
   const getFormattedQuestionText = () => {
@@ -45,17 +50,14 @@ const TextHoleQuestion: React.FC<TextHoleQuestionProps> = ({ questionText, blank
       textWithBlanks.push(beforeBlank);
 
       textWithBlanks.push(
-        <>
-          <input
-            key={blank.id}
-            type="text"
-            id={blank.id}
-            className="input input-sm"
-            value={userAnswers[blank.id] || ''}
-            onChange={(e) => handleInputChange(blank.id, e.target.value)}
-          />
-          {' '}
-        </>
+        <input
+          key={blank.id}
+          type="text"
+          id={blank.id}
+          className="input input-sm"
+          value={userAnswers[blank.id] || ''}
+          onChange={(e) => handleInputChange(blank.id, e.target.value)}
+        />
       );
 
       lastIndex = startIdx + blank.id.length + 3;
@@ -75,7 +77,7 @@ const TextHoleQuestion: React.FC<TextHoleQuestionProps> = ({ questionText, blank
       <div className="mt-4">
         <button
           onClick={checkAnswers}
-          className="bg-blue-500 text-white px-4 py-2 rounded"
+          className="btn btn-primary"
         >
           Valider les réponses
         </button>
