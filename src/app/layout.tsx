@@ -6,8 +6,8 @@ import LyrecoChecker from "./components/easter/LyrecoChecker";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-    title: "Race for Water",
-    description: "Race for Water",
+    title: "Race for Water - Avenir Océan",
+    description: "Site web de l'événement NUIT DE L'INFO 2024",
 };
 
 export default function RootLayout({
