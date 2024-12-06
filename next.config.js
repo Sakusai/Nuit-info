@@ -15,6 +15,7 @@ const config = {
                 pathname: '/*x*',
             },
         ],
+        dangerouslyAllowSVG: true,
     },
 };
 
