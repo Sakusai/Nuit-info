@@ -33,7 +33,7 @@ export default function Header() {
                         ))}
                     </ul>
                 </div>
-                <Link href="/" className="btn btn-ghost text-xl">🪸 Race for Water </Link>
+                <Link href="/" className="btn btn-ghost text-xl">🪸 Race for Water: Avenir Ocean</Link>
             </div>
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
