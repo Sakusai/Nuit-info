@@ -47,7 +47,7 @@ const QCMModal = (props: Props) => {
                 type="radio"
                 name="qcm"
                 value={reponse.letter}
-                onClick={() => setSelected(reponse.letter)}
+                onChange={() => setSelected(reponse.letter)}
                 checked={reponse.letter === selectedAnswer}
               />
               <label className="p-1">{reponse.entire}</label>
