@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { set } from "zod";
 import ModalContent from "~/components/ModalContent";
 import Radar from "~/components/Radar";
 
@@ -13,15 +12,14 @@ interface Props {
 
 const QCMModal = (props: Props) => {
   const [selectedAnswer, setSelectedAnswer] = useState("");
-  const [isCorrect, setIsCorrect] = useState(false);
+  const [isCorrect, setIsCorrect] = useState<boolean | undefined>(undefined);
 
   const setSelected = (r: string) => {
-    console.log("selected : ", r);
+    setIsCorrect(undefined);
     setSelectedAnswer(r);
   };
 
   const validResponse = () => {
-    console.log("azer : ", selectedAnswer, props.reponse);
     if (selectedAnswer === props.reponse) {
       setIsCorrect(true);
     } else {
@@ -50,9 +48,16 @@ const QCMModal = (props: Props) => {
         Valider
       </button>
       {isCorrect ? (
-        <p>La réponse est en effet : {props.reponse}</p>
-      ) : (
+        <p>
+          La réponse est en effet : {props.reponse}
+          <br />
+          En effet, l&apos;océan rejette de l&apos;oxygène, nécessaire à la
+          respiration de l&apos;être humain
+        </p>
+      ) : isCorrect == false ? (
         <p>Mauvaise réponse !</p>
+      ) : (
+        ""
       )}
     </>
   );
