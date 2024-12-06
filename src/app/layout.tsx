@@ -2,6 +2,7 @@ import Header from "~/app/components/common/Header";
 import "~/styles/globals.css";
 import { Inter } from "next/font/google";
 import LyrecoChecker from "./components/easter/LyrecoChecker";
+import KonamiEmojiChanger from "~/components/KonamiEmojiChanger";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
                 <Header />
                 <main className="flex flex-col flex-1">
                     <LyrecoChecker />
+                    <KonamiEmojiChanger />
                     {children}
                 </main>
             </body>

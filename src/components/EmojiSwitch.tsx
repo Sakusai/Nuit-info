@@ -14,23 +14,36 @@ function EmojiSwitch() {
   };
 
   const toggleFont = () => {
-    const allTextElements = document.querySelectorAll<HTMLElement>('*');
-    
+    const allTextElements = document.querySelectorAll<HTMLElement>("*");
+
     allTextElements.forEach((element) => {
-      if (element.children.length === 0 && element.innerText.trim() !== "") {
-        if (!element.hasAttribute('data-original-text')) {
-          element.setAttribute('data-original-text', element.innerText);
-        }
+      if (
+        element.children.length === 0 &&
+        typeof element.innerText === "string" &&
+        element.innerText.trim() !== ""
+      ) {
+        const originalText = element.getAttribute("data-original-text");
 
         if (isEmojiFont) {
-          element.innerText = element.getAttribute('data-original-text') ?? "";
-        } else {
-          const originalText = element.getAttribute('data-original-text') ?? "";
-          let newText = '';
-
-          for (const char of originalText) {
-            newText += charToEmoji(char);
+          if (originalText !== null) {
+            element.innerText = originalText;
           }
+        } else {
+          if (!originalText) {
+            element.setAttribute("data-original-text", element.innerText);
+          }
+
+          const currentText = element.getAttribute("data-original-text") ?? "";
+          let newText = "";
+
+          for (const char of currentText) {
+            if (/\S/.test(char)) {
+              newText += charToEmoji(char);
+            } else {
+              newText += char;
+            }
+          }
+
           element.innerText = newText;
         }
       }
@@ -40,24 +53,11 @@ function EmojiSwitch() {
   };
 
   return (
-    <div>
-      <div style={{ fontSize: "1.25rem", marginBottom: "1rem" }}>
-        Test zizi caca
-      </div>
       <button
         onClick={toggleFont}
-        style={{
-          padding: "0.5rem 1rem",
-          backgroundColor: "#3b82f6",
-          color: "white",
-          borderRadius: "0.375rem",
-          cursor: "pointer",
-          transition: "background-color 0.2s",
-        }}
       >
-        {isEmojiFont ? "Revenir à la police normale" : "Activer le mode Emoji"}
+        {isEmojiFont ? "Revenir à la police normale" : "🫡"}
       </button>
-    </div>
   );
 }
 

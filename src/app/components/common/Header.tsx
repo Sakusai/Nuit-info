@@ -1,4 +1,5 @@
 import Link from "next/link";
+import EmojiSwitch from "~/components/EmojiSwitch";
 
 export default function Header() {
   const links = [
