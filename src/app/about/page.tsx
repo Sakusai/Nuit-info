@@ -13,15 +13,16 @@ interface TeamMember {
     name: string;
     role: Role;
     lyreco?: boolean;
+    image?: string;
 }
 
 const teamMembers: TeamMember[] = [
-    { name: 'Maton Erwann', role: Role.Leader },
-    { name: 'Legros Enzo', role: Role.Developer },
+    { name: 'Maton Erwann', role: Role.Leader, image: '/img/erwann.png' },
+    { name: 'Legros Enzo', role: Role.Developer, image: '/img/enzo.png' },
     { name: 'Clochette Baptiste', role: Role.Developer },
-    { name: 'Levis Lohan', role: Role.Developer },
-    { name: 'Udycz Alexis', role: Role.Developer },
-    { name: 'Brebant Noa', role: Role.Developer, lyreco: true },
+    { name: 'Levis Lohan', role: Role.Developer, image: '/img/lohan.png' },
+    { name: 'Udycz Alexis', role: Role.Developer, image: '/img/alexis.png' },
+    { name: 'Brebant Noa', role: Role.Developer, lyreco: true, image: '/img/noa.png' },
 ];
 
 export default function About() {
@@ -49,11 +50,49 @@ export default function About() {
                         </p>
                     </div>
                 </Section>
-                <Section title="Le projet « Avenir Océan »">
+                
+                <Section title="Le podcast">
+                    <div className="flex flex-col items-center gap-5">
+                        <p className="text-justify">
+                            Notre podcast <strong>Avenir Océan</strong> est un projet de sensibilisation à la pollution plastique des océans. Nous avons pour objectif de
+                            sensibiliser le grand public à la pollution plastique des océans, à ses conséquences et à ses solutions. Pour cela, nous
+                            avons réalisé une série de podcasts qui abordent différents aspects de la pollution plastique des océans.
+                        </p>
+                        <div className="flex flex-wrap gap-5 justify-center">
+                            <video
+                                src="\video\CaChauffe.mp4"
+                                width={400} 
+                                height={300}
+                                className="rounded-xl shadow-lg"
+                                controls
+                            />
+                            <video
+                                src="\videos\Plancton.mp4"
+                                width={400}
+                                height={300}
+                                className="rounded-xl shadow-lg"
+                                controls
+                            />
+                        </div>
+                    </div>
+                </Section>
+                <Section title="Le Jingle">
+                    <div className="flex flex-col items-center gap-5">
+                        <p className="text-justify">
+                            Notre jingle a été créé par <strong>Udycz Alexis</strong>, membre de l'équipe EKIP. Il a été réalisé à l'aide du logiciel <strong>GarageBand</strong> d'Apple.
+                        </p>
+                        <audio
+                            src="\video\jingle.mp3"
+                            className="rounded-xl shadow-lg"
+                            controls
+                        />
+                    </div>
+                </Section>
+                <Section title="Le projet « Avenir Ocean »">
                     <div className="flex flex-col gap-5 items-center">
                         <Image
-                            src="https://placehold.co/600x400"
-                            alt="placeholder"
+                            src="/img/nous.jpg"
+                            alt="Nous"
                             width={600}
                             height={400}
                             className="m-auto rounded-xl shadow-lg"
@@ -80,49 +119,12 @@ export default function About() {
                                     if (member.lyreco) {
                                         modalRef.current?.showModal();
                                     }
-                                }} isLyreco={Boolean(member.lyreco)} />
+                                }} isLyreco={Boolean(member.lyreco)} image={member.image} />
                             ))}
                         </div>
                     </div>
                 </Section>
-                <Section title="Le podcast">
-                    <div className="flex flex-col items-center gap-5">
-                        <p className="text-justify">
-                            Notre podcast <strong>Avenir Océan</strong> est un projet de sensibilisation à la pollution plastique des océans. Nous avons pour objectif de
-                            sensibiliser le grand public à la pollution plastique des océans, à ses conséquences et à ses solutions. Pour cela, nous
-                            avons réalisé une série de podcasts qui abordent différents aspects de la pollution plastique des océans.
-                        </p>
-                        <div className="flex flex-wrap gap-5 justify-center">
-                            <video
-                                src="\video\CaChauffe.mp4"
-                                width={400} 
-                                height={300}
-                                className="rounded-xl shadow-lg"
-                                controls
-                            />
-                            <video
-                                src="\video\Plancton.mp4"
-                                width={400} 
-                                height={300}
-                                className="rounded-xl shadow-lg"
-                                controls
-                            />
-                        </div>
-                    </div>
-                </Section>
-                <Section title="Le jingle">
-                    <div className="flex flex-col items-center gap-5">
-                        <p className="text-justify">
-                            Notre jingle a été créé par <strong>Udycz Alexis</strong>, membre de l'équipe EKIP. Il a été réalisé à l'aide du logiciel <strong>GarageBand</strong> d'Apple.
-                        </p>
-                        <audio
-                            src="\video\jingle.mp3"
-                            className="rounded-xl shadow-lg"
-                            controls
-                        />
-                    </div>
-                    </Section>
-
+                <small className="text-center">Les photos ont été prises à 07h30 du matin, merci de votre compréhension.</small>
             </div>
         </div>
     );
@@ -137,11 +139,12 @@ function Section({ title, children }: { title: string; children: React.ReactNode
     );
 }
 
-function TeamCard({ name, role, onLyreco, isLyreco }: { name: string; role: Role, onLyreco: () => void, isLyreco: boolean }) {
+function TeamCard({ name, role, image, onLyreco, isLyreco }: { name: string, image: string|undefined; role: Role, onLyreco: () => void, isLyreco: boolean }) {
     const badge = role === Role.Leader ? 'badge-primary' : 'badge-secondary';
     return (
         <div className="card w-60 bg-base-100 shadow-xl hover:scale-105 transition-transform">
-            <div className="card-body items-center text-center">
+            <div className="card-body items-center text-center justify-end">
+                {image && <Image src={image} alt={name} width={200} height={200} className="rounded-full" />}
                 <h2 className="card-title">{name}</h2>
                 <div className="flex justify-center items-center gap-2">
                     <div className={`badge ${badge}`}>{role}</div>
