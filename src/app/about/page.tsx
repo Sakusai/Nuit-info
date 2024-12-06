@@ -94,14 +94,14 @@ export default function About() {
                         </p>
                         <div className="flex flex-wrap gap-5 justify-center">
                             <video
-                                src="\videos\CaChauffe.mp4"
+                                src="\video\CaChauffe.mp4"
                                 width={400} 
                                 height={300}
                                 className="rounded-xl shadow-lg"
                                 controls
                             />
                             <video
-                                src="\videos\Plancton.mp4"
+                                src="\video\Plancton.mp4"
                                 width={400} 
                                 height={300}
                                 className="rounded-xl shadow-lg"
@@ -116,7 +116,7 @@ export default function About() {
                             Notre jingle a été créé par <strong>Udycz Alexis</strong>, membre de l'équipe EKIP. Il a été réalisé à l'aide du logiciel <strong>GarageBand</strong> d'Apple.
                         </p>
                         <audio
-                            src="\videos\jingle.mp3"
+                            src="\video\jingle.mp3"
                             className="rounded-xl shadow-lg"
                             controls
                         />

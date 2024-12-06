@@ -7,7 +7,7 @@ export default function Ocean() {
             <video
                 autoPlay loop muted
                 className="object-cover top-0 left-0 fixed z-[-1] w-full h-full opacity-50 blur-sm"
-                src="video/ocean.mp4"
+                src="video/human.mp4"
             />
             <div className="flex flex-col items-center justify-center flex-1">
                 <div
@@ -20,16 +20,12 @@ export default function Ocean() {
                         height: "90vh",
                     }}
                 >
-                    <PointRadar posX={51} posY={13}>
-                        <ModalContent title="Ocean" content="The ocean is a vast body of saltwater that">
-                            <p>covers 71 percent of the Earth's surface.</p>
-                        </ModalContent>
-                    </PointRadar>
                 </div>
             </div>
 
             <div className="fixed bottom-0 right-0 p-2 m-1 bg-black bg-opacity-50 rounded-lg">
-                <a href="https://www.pexels.com/video/bird-s-eye-view-of-ocean-waves-1918465/" className="link font-thin">© Bird's Eye View of Ocean Waves</a>
+                <a href="https://www.pexels.com/video/scenic-mountain-hiking-adventure-in-washington-29650692/" className="link font-thin">© Scenic Mountain Hiking Adventure in Washington
+                </a>
             </div>
         </>
     );

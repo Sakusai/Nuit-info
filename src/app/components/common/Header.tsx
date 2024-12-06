@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Header() {
     const links = [
         <Link key="ocean" href="/ocean">L&apos;Océan</Link>,
-        <Link key="human" href="/human">L&apos;Humain</Link>,
+        <Link key="human" href="/corps-humain">L&apos;Humain</Link>,
         <Link key="about" href="/about">À propos</Link>,
     ];
 
@@ -36,7 +36,7 @@ export default function Header() {
                 <Link href="/" className="btn btn-ghost text-xl">🪸 Race for Water: Avenir Océan</Link>
             </div>
             <div className="navbar-end hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+                <ul className="menu menu-horizontal px-1 flex gap-2">
                     {links.map((link, index) => (
                         <li key={index}>{link}</li>
                     ))}
