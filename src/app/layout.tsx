@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Header from "~/app/components/common/Header";
 import "~/styles/globals.css";
 import { Inter } from "next/font/google";

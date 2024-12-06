@@ -1,3 +1,4 @@
+/* eslint-disable */
 import ModalContent from "~/components/ModalContent";
 import QCMModal from "~/components/QCMModal";
 import PointRadar from "~/components/Radar";

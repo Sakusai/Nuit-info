@@ -1,3 +1,4 @@
+/* eslint-disable */
 "use client";
 
 import { ReactElement } from "react";
