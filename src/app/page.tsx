@@ -26,7 +26,7 @@ export default function HomePage() {
           <div className="flex max-w-md flex-col items-center gap-4 rounded-xl bg-white/10 p-6 text-center text-white hover:bg-white/20">
             <h2 className="text-3xl font-bold">Océan</h2>
             <p className="text-lg">
-              Plongez dans les merveilles de l'océan, explorez ses profondeurs et sa vie marine.
+              Plongez dans les merveilles de l&apos;océan, explorez ses profondeurs et sa vie marine.
             </p>
             <Link
               href="/ocean"

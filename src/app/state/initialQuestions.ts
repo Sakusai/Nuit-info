@@ -1,7 +1,7 @@
 import { SubjectType } from '~/app/enum/SubjectType';
 import { QuestionType } from '~/app/enum/QuestionType';
 import { HumanBodyPosition } from '~/app/enum/HumanBodyPosition';
-import { Question } from '~/app/enum/Question';
+import type { Question } from '~/app/enum/Question';
 
 const initialQuestions: Question[] = [
     {
