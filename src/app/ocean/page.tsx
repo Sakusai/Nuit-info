@@ -1,32 +1,49 @@
+"use client";
+
 import ModalContent from "~/components/ModalContent";
 import PointRadar from "~/components/Radar";
+import TrueOfFalse from "~/components/TrueOrFalse";
+import HoleQuestions from "~/components/HoleQuestions";
+import useQuizStore from "~/app/state/useQuizStore";
+import QCMModal from "~/components/QCMModal";
 
 export default function Ocean() {
-    return (
-        <>
-            <video
-                autoPlay loop muted
-                className="object-cover top-0 left-0 fixed z-[-1] w-full h-full opacity-50"
-                src="video/ocean.mp4"
-            />
-            <div className="flex flex-col items-center justify-center flex-1">
+    const {getQuestionById} = useQuizStore()
+    const question2 = getQuestionById(2)
+    if (question2)
+        return (
+            <>
+                <video
+                    autoPlay loop muted
+                    className="object-cover top-0 left-0 fixed z-[-1] w-full h-full opacity-50"
+                    src="video/ocean.mp4"
+                />
                 <div
+                    className="flex items-center justify-center w-full h-screen"
                     style={{
                         backgroundImage: "url('/img/human.png')",
                         backgroundSize: "contain",
                         backgroundPosition: "center center",
                         backgroundRepeat: "no-repeat",
-                        width: "90vh",
-                        height: "90vh",
                     }}
                 >
-                    <PointRadar posX={51} posY={13}>
-                        <ModalContent title="Ocean" content="The ocean is a vast body of saltwater that">
-                            <p>covers 71 percent of the Earth's surface.</p>
+                    {/* Points Radar */}
+                    <PointRadar posX={202} posY={13}>
+                        <QCMModal questionId={4}  />
+                    </PointRadar>
+                    <PointRadar posX={110} posY={32}>
+                        <HoleQuestions questionId={"id" in question2 ? question2.id : 0} questionText={question2.questionType} blanks={question2.blanks ?? []} />
+                    </PointRadar>
+                    <PointRadar posX={-9} posY={32}>
+                        <TrueOfFalse idQuestion={1} />
+                    </PointRadar>
+                    <PointRadar posX={-90} posY={40}>
+                        <ModalContent title="jambe" content="Mountains rise high into the atmosphere.">
+                            <p>They are natural wonders on Earth.</p>
                         </ModalContent>
                     </PointRadar>
                 </div>
-            </div>
-        </>
-    );
+            </>
+        );
+    return "";
 }
