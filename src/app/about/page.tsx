@@ -85,6 +85,44 @@ export default function About() {
                         </div>
                     </div>
                 </Section>
+                <Section title="Le podcast">
+                    <div className="flex flex-col items-center gap-5">
+                        <p className="text-justify">
+                            Notre podcast <strong>Avenir Ocean</strong> est un projet de sensibilisation à la pollution plastique des océans. Nous avons pour objectif de
+                            sensibiliser le grand public à la pollution plastique des océans, à ses conséquences et à ses solutions. Pour cela, nous
+                            avons réalisé une série de podcasts qui abordent différents aspects de la pollution plastique des océans.
+                        </p>
+                        <div className="flex flex-wrap gap-5 justify-center">
+                            <video
+                                src="\videos\CaChauffe.mp4"
+                                width={400} 
+                                height={300}
+                                className="rounded-xl shadow-lg"
+                                controls
+                            />
+                            <video
+                                src="\videos\Plancton.mp4"
+                                width={400} 
+                                height={300}
+                                className="rounded-xl shadow-lg"
+                                controls
+                            />
+                        </div>
+                    </div>
+                </Section>
+                <Section title="Le jingle">
+                    <div className="flex flex-col items-center gap-5">
+                        <p className="text-justify">
+                            Notre jingle a été créé par <strong>Udycz Alexis</strong>, membre de l'équipe EKIP. Il a été réalisé à l'aide du logiciel <strong>GarageBand</strong> d'Apple.
+                        </p>
+                        <audio
+                            src="\videos\jingle.mp3"
+                            className="rounded-xl shadow-lg"
+                            controls
+                        />
+                    </div>
+                    </Section>
+
             </div>
         </div>
     );
