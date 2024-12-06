@@ -1,5 +1,6 @@
-"use client"
+"use client";
 import Link from "next/link";
+import QCMModal from "~/components/QCMModal";
 import ModalContent from "~/components/ModalContent";
 import Radar from "~/components/Radar";
 import TrueOfFalse from "~/components/TrueOrFalse";
@@ -22,7 +23,8 @@ export default function HomePage() {
           <div className="flex max-w-md flex-col items-center gap-4 rounded-xl bg-white/10 p-6 text-center text-white hover:bg-white/20">
             <h2 className="text-3xl font-bold">Corps Humain</h2>
             <p className="text-lg">
-              Découvrez les merveilles du corps humain, ses systèmes et son fonctionnement.
+              Découvrez les merveilles du corps humain, ses systèmes et son
+              fonctionnement.
             </p>
             <Link
               href="/corps-humain"
@@ -36,7 +38,8 @@ export default function HomePage() {
           <div className="flex max-w-md flex-col items-center gap-4 rounded-xl bg-white/10 p-6 text-center text-white hover:bg-white/20">
             <h2 className="text-3xl font-bold">Océan</h2>
             <p className="text-lg">
-              Plongez dans les merveilles de l&apos;océan, explorez ses profondeurs et sa vie marine.
+              Plongez dans les merveilles de l&apos;océan, explorez ses
+              profondeurs et sa vie marine.
             </p>
             <Link
               href="/ocean"
@@ -44,6 +47,19 @@ export default function HomePage() {
             >
               En savoir plus
             </Link>
+            <QCMModal
+              questionId={1}
+              question="Quelle proportion de l'oxygène présent dans l'atmosphère est produite par les océans ? "
+              listReponse={[
+                "Moins de 10%",
+                "Entre 20% et 50%",
+                "Autours de 70%",
+                "Environ 90%",
+              ]}
+              reponse="Autours de 70%"
+              explenation="En effet, l'océan rejette de l'oxygène, nécessaire à la
+          respiration de l'être humain"
+            />
           </div>
         </div>
       </div>

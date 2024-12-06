@@ -1,6 +1,6 @@
 "use client";
-import React, { useState } from 'react';
-import useQuizStore from '~/app/state/useQuizStore';
+import React, { useState } from "react";
+import useQuizStore from "~/app/state/useQuizStore";
 
 interface Blank {
   id: string;
@@ -13,7 +13,11 @@ interface TextHoleQuestionProps {
   blanks: Blank[];
 }
 
-const TextHoleQuestion: React.FC<TextHoleQuestionProps> = ({ questionId, questionText, blanks }) => {
+const TextHoleQuestion: React.FC<TextHoleQuestionProps> = ({
+  questionId,
+  questionText,
+  blanks,
+}) => {
   const [userAnswers, setUserAnswers] = useState<{ [key: string]: string }>({});
   const [feedback, setFeedback] = useState<string | null>(null);
 
@@ -35,7 +39,11 @@ const TextHoleQuestion: React.FC<TextHoleQuestionProps> = ({ questionId, questio
       }
     });
 
-    setFeedback(correct ? "Bien joué ! C'est une bonne réponse !" : "Les réponses ne sont pas toutes correctes.");
+    setFeedback(
+      correct
+        ? "Bien joué ! C'est une bonne réponse !"
+        : "Les réponses ne sont pas toutes correctes.",
+    );
     setCorrectAnswer(questionId, correct);
   };
 
@@ -55,9 +63,9 @@ const TextHoleQuestion: React.FC<TextHoleQuestionProps> = ({ questionId, questio
           type="text"
           id={blank.id}
           className="input input-sm"
-          value={userAnswers[blank.id] || ''}
+          value={userAnswers[blank.id] ?? ""}
           onChange={(e) => handleInputChange(blank.id, e.target.value)}
-        />
+        />,
       );
 
       lastIndex = startIdx + blank.id.length + 3;
@@ -69,21 +77,18 @@ const TextHoleQuestion: React.FC<TextHoleQuestionProps> = ({ questionId, questio
   };
 
   return (
-    <div className="max-w-lg mx-auto p-4">
-      <p className="text-lg mb-4">Complétez les trous suivants :</p>
-      <div className="question-text mb-4">
-        {getFormattedQuestionText()}
-      </div>
+    <div className="mx-auto max-w-lg p-4">
+      <p className="mb-4 text-lg">Complétez les trous suivants :</p>
+      <div className="question-text mb-4">{getFormattedQuestionText()}</div>
       <div className="mt-4">
-        <button
-          onClick={checkAnswers}
-          className="btn btn-primary"
-        >
+        <button onClick={checkAnswers} className="btn btn-primary">
           Valider les réponses
         </button>
       </div>
       {feedback && (
-        <p className={`mt-4 text-xl ${feedback.includes('bonne') ? 'text-green-500' : 'text-red-500'}`}>
+        <p
+          className={`mt-4 text-xl ${feedback.includes("bonne") ? "text-green-500" : "text-red-500"}`}
+        >
           {feedback}
         </p>
       )}
