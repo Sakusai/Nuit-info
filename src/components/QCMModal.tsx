@@ -44,11 +44,11 @@ const QCMModal = (props: Props) => {
               <input
                 type="radio"
                 name="qcm"
-                value={reponse}
-                onClick={() => setSelected(reponse)}
-                checked={reponse === selectedAnswer}
+                value={reponse.letter}
+                onClick={() => setSelected(reponse.letter)}
+                checked={reponse.letter === selectedAnswer}
               />
-              <label className="p-1">{reponse}</label>
+              <label className="p-1">{reponse.entire}</label>
             </li>
           ))}
         </ul>
