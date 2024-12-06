@@ -37,15 +37,21 @@
     z-index: 1;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+  .bar {
+    position: absolute;
+    height: 2px;
+    background-color: #10b981;
+    width: 35px;
+    transform: translateY(-50%);
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+    z-index: 1;
   }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
   
 
@@ -84,18 +90,24 @@
   z-index: 10;
 }
 
-.modal {
-  position: absolute;
-  background-color: #1f2937;
-  color: white;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  z-index: 9999;
-  pointer-events: all;
-}
+.radar-modal {
+    position: absolute;
+    background-color: #1f2937;
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999; 
+    pointer-events: all; 
+    opacity: 1; 
+    visibility: visible; 
+    max-width: 300px; 
+    width: auto; 
+    height: auto; 
+    overflow: auto; 
+  }
 
-.modal-button {
+.radar-modal-button {
   background-color: #ef4444;
   padding: 0.5rem 1rem;
   border-radius: 5px;
@@ -104,7 +116,7 @@
   transition: background-color 0.2s;
 }
 
-.modal-button:hover {
+.radar-modal-button:hover {
   background-color: #dc2626;
 }
 

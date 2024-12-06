@@ -1,6 +1,11 @@
-import { SubjectType } from '~/app/enum/SubjectType';
-import { QuestionType } from '~/app/enum/QuestionType';
-import { HumanBodyPosition } from '~/app/enum/HumanBodyPosition';
+import type { SubjectType } from '~/app/enum/SubjectType';
+import type { QuestionType } from '~/app/enum/QuestionType';
+import type { HumanBodyPosition } from '~/app/enum/HumanBodyPosition';
+
+interface Blank {
+    id: string;
+    answer: string;
+  }
 
 export interface Question {
     /**
@@ -11,6 +16,7 @@ export interface Question {
      * La position du corps humain pour la question
      */
     humanBodyPosition: HumanBodyPosition;
+    blanks: Blank[] | undefined;
     /**
      * Le type de sujet de la question (océan ou humain)
      */

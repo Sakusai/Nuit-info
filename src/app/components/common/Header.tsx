@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export default function Header() {
     const links = [
-        <Link href="/ocean">L'Océan</Link>,
-        <Link href="/human">L'Humain</Link>,
-        <Link href="/about">À propos</Link>,
+        <Link key="ocean" href="/ocean">L&apos;Océan</Link>,
+        <Link key="human" href="/human">L&apos;Humain</Link>,
+        <Link key="about" href="/about">À propos</Link>,
     ];
 
     return (
@@ -33,7 +33,7 @@ export default function Header() {
                         ))}
                     </ul>
                 </div>
-                <Link href="/" className="btn btn-ghost text-xl">🪸 Race for Water </Link>
+                <Link href="/" className="btn btn-ghost text-xl">🪸 Race for Water: Avenir Ocean</Link>
             </div>
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
