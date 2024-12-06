@@ -1,18 +1,23 @@
 "use client";
 
 import React, { useState } from "react";
+import useQuizStore from "~/app/state/useQuizStore";
 import ModalContent from "~/components/ModalContent";
 import Radar from "~/components/Radar";
 
 interface Props {
+  questionId: number;
   question: string;
   listReponse: string[];
   reponse: string;
+  explenation: string;
 }
 
 const QCMModal = (props: Props) => {
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [isCorrect, setIsCorrect] = useState<boolean | undefined>(undefined);
+
+  const { setCorrectAnswer } = useQuizStore();
 
   const setSelected = (r: string) => {
     setIsCorrect(undefined);
@@ -22,8 +27,10 @@ const QCMModal = (props: Props) => {
   const validResponse = () => {
     if (selectedAnswer === props.reponse) {
       setIsCorrect(true);
+      setCorrectAnswer(props.questionId, true);
     } else {
       setIsCorrect(false);
+      setCorrectAnswer(props.questionId, false);
     }
   };
 
@@ -51,8 +58,7 @@ const QCMModal = (props: Props) => {
         <p>
           La réponse est en effet : {props.reponse}
           <br />
-          En effet, l&apos;océan rejette de l&apos;oxygène, nécessaire à la
-          respiration de l&apos;être humain
+          {props.explenation}
         </p>
       ) : isCorrect == false ? (
         <p>Mauvaise réponse !</p>

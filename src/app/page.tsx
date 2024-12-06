@@ -38,6 +38,7 @@ export default function HomePage() {
               En savoir plus
             </Link>
             <QCMModal
+              questionId={1}
               question="Quelle proportion de l'oxygène présent dans l'atmosphère est produite par les océans ? "
               listReponse={[
                 "Moins de 10%",
@@ -46,6 +47,8 @@ export default function HomePage() {
                 "Environ 90%",
               ]}
               reponse="Autours de 70%"
+              explenation="En effet, l'océan rejette de l'oxygène, nécessaire à la
+          respiration de l'être humain"
             />
           </div>
         </div>
