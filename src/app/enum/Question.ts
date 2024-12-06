@@ -16,7 +16,7 @@ export interface Question {
    * La position du corps humain pour la question
    */
   humanBodyPosition: HumanBodyPosition;
-  blanks: Blank[] | undefined;
+  blanks?: Blank[];
   /**
    * Le type de sujet de la question (océan ou humain)
    */
