@@ -48,7 +48,7 @@ export interface Question {
   /*
    * L'explication de la réponse
    */
-  multipleAnswers?: string[];
+  multipleAnswers?: { letter: string; entire: string }[];
   /*
    * L'explication de la réponse
    */
