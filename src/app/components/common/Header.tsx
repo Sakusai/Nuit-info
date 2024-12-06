@@ -9,7 +9,7 @@ export default function Header() {
     <Link key="ocean" href="/ocean">
       L&apos;Océan
     </Link>,
-    <Link key="human" href="/human">
+    <Link key="human" href="/corps-humain">
       L&apos;Humain
     </Link>,
     <Link key="about" href="/about">
@@ -47,11 +47,11 @@ export default function Header() {
           </ul>
         </div>
         <Link href="/" className="btn btn-ghost text-xl">
-          🪸 Race for Water: Avenir Ocean
+          🪸 Race for Water: Avenir Océan
         </Link>
       </div>
       <div className="navbar-end hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal flex gap-2 px-1">
           {links.map((link, index) => (
             <li key={index}>{link}</li>
           ))}
