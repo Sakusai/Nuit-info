@@ -1,6 +1,6 @@
-import { SubjectType } from '~/app/enum/SubjectType';
-import { QuestionType } from '~/app/enum/QuestionType';
-import { HumanBodyPosition } from '~/app/enum/HumanBodyPosition';
+import type { SubjectType } from '~/app/enum/SubjectType';
+import type { QuestionType } from '~/app/enum/QuestionType';
+import type { HumanBodyPosition } from '~/app/enum/HumanBodyPosition';
 
 export interface Question {
     /**

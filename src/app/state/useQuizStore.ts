@@ -1,7 +1,7 @@
 import { create } from 'zustand';
-import { SubjectType } from '~/app/enum/SubjectType';
-import { HumanBodyPosition } from '~/app/enum/HumanBodyPosition';
-import { Question } from '~/app/enum/Question';
+import type { SubjectType } from '~/app/enum/SubjectType';
+import type { HumanBodyPosition } from '~/app/enum/HumanBodyPosition';
+import type { Question } from '~/app/enum/Question';
 import initialQuestions from './initialQuestions';
 
 interface QuizState {

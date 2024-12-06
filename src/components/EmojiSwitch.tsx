@@ -4,7 +4,7 @@ import React, { useState } from "react";
 function EmojiSwitch() {
   const [isEmojiFont, setIsEmojiFont] = useState(false);
 
-  const charToEmoji = (char: string) => {
+  const charToEmoji = (_char: string) => {
     const emojis = [
       '😀', '😃', '😄', '😁', '😆', '😅', '😂', '🤣', '😊', '😇',
       '🙂', '🙃', '😉', '😍', '😘', '😋', '😜', '😝', '😛', '🤪',
@@ -14,22 +14,22 @@ function EmojiSwitch() {
   };
 
   const toggleFont = () => {
-    const allTextElements = document.querySelectorAll('*');
+    const allTextElements = document.querySelectorAll<HTMLElement>('*');
     
-    allTextElements.forEach((element: any) => {
+    allTextElements.forEach((element) => {
       if (element.children.length === 0 && element.innerText.trim() !== "") {
         if (!element.hasAttribute('data-original-text')) {
           element.setAttribute('data-original-text', element.innerText);
         }
 
         if (isEmojiFont) {
-          element.innerText = element.getAttribute('data-original-text');
+          element.innerText = element.getAttribute('data-original-text') ?? "";
         } else {
-          let originalText = element.getAttribute('data-original-text');
+          const originalText = element.getAttribute('data-original-text') ?? "";
           let newText = '';
 
-          for (let i = 0; i < originalText.length; i++) {
-            newText += charToEmoji(originalText[i]);
+          for (const char of originalText) {
+            newText += charToEmoji(char);
           }
           element.innerText = newText;
         }

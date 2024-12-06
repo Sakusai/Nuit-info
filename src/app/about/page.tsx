@@ -34,13 +34,19 @@ export default function About() {
                             organisation dédiée à la préservation des océans. Connue pour ses <em>Odyssées mondiales</em> à bord de navires
                             révolutionnaires au service des océans, la Fondation étudie, depuis plus de <strong>10 ans</strong>, l’impact de la pollution plastique
                             sur les écosystèmes et la santé humaine, tout en apportant aux communautés locales des solutions pertinentes afin
-                            d'empêcher les déchets plastiques d’atteindre les cours d’eau.
+                            d&apos;empêcher les déchets plastiques d&apos;atteindre les cours d&apos;eau.
                         </p>
                     </div>
                 </Section>
                 <Section title="Le projet : NOM_DU_PROJET">
                     <div className="flex flex-col gap-5 items-center">
-                        <img src="https://placehold.co/600x400" alt="placeholder" className="m-auto rounded-xl shadow-lg" />
+                        <Image
+                            src="https://placehold.co/600x400"
+                            alt="placeholder"
+                            width={600}
+                            height={400}
+                            className="m-auto rounded-xl shadow-lg"
+                        />
                         <p className="text-justify">
                             Nous sommes <strong>EKIP</strong>, étudiants au CNAM de REIMS (ainsi que du CESI de REIMS). Notre équipe est composée de 6 membres :
                         </p>
